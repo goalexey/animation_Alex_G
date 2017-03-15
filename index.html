@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+body {
+	margin: 0;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1280px;
+	position: relative;
+	border: solid grey 4px;
+	background-color: #7a2f04;
+	overflow: hidden;
+}
+
+.cars {
+	position: absolute;
+
+}
+
+#car01{width: 100px; top: 310px; left: 1300px;}
+#car02{width: 100px; top: 360px; left: -100px;}
+#car03{width: 100px; top: 390px; left: -300px;}
+#car04{width: 100px; top: 440px; left: -400px;}
+#car05{width: 100px; top: 490px; left: -200px;}
+#car06{width: 100px; top: 540px; left: 1700px;}
+
+button {
+	margin: 20px auto;
+	width: 150px;
+	height: 60px;
+	background-color: black;
+	color: white;
+	font-family: impact;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+#center{
+	width: 150px;
+	margin: 0 auto;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container">
+	<!-- Background skyline and roads -->
+	<img class="background-img" src="images/country_background.jpg">
+	<img class="background-img" src="images/road.jpg">
+	<img class="background-img" src="images/road.jpg">
+	<img class="background-img" src="images/road.jpg">
+	<img class="background-img" src="images/road.jpg">
+	<img class="background-img" src="images/road.jpg">
+
+	<!-- Cars -->
+	<img class="cars" id="car01" src="images/car01.gif">
+	<img class="cars" id="car02" src="images/car02.gif">
+	<img class="cars" id="car03" src="images/car07.gif">
+	<img class="cars" id="car04" src="images/car04.gif">
+	<img class="cars" id="car05" src="images/car05.gif">
+	<img class="cars" id="car06" src="images/car06.gif">
+
+</div>
+<div id="center"><button type="button" onclick="move()">START THE TRAFFIC</button></div>
+
+<script>
+
+
+function carOneAnimate(){
+	var element = document.getElementById('car01');
+	var position = 1300;
+	var interval = setInterval(frame, 2)
+
+	function frame(){
+		if (position == -150 ){
+			clearInterval(interval);
+		} else {
+			position--;
+			element.style.left = position + '.1px';
+		}
+	}
+}
+
+function carTwoAnimate(){
+	var element = document.getElementById('car02');
+	var position = -150;
+	var interval = setInterval(frame, 5)
+
+	function frame(){
+		if (position == 1300 ){
+			clearInterval(interval);
+		} else {
+			position++;
+			element.style.left = position + '.1px';
+		}
+	}
+}
+
+function carThreeAnimate(){
+	var element = document.getElementById('car03');
+	var position = -300;
+	var interval = setInterval(frame, 1)
+
+	function frame(){
+		if (position == 1600 ){
+			clearInterval(interval);
+		} else {
+			position++;
+			element.style.left = position + 'px';
+		}
+	}
+}
+
+function carFourAnimate(){
+	var element = document.getElementById('car04');
+	var position = -400;
+	var interval = setInterval(frame, 10)
+
+	function frame(){
+		if (position == 1300 ){
+			clearInterval(interval);
+		} else {
+			position++;
+			element.style.left = position + 'px';
+		}
+	}
+}
+
+function carFiveAnimate(){
+	var element = document.getElementById('car05');
+	var position = -250;
+	var interval = setInterval(frame, 5)
+
+	function frame(){
+		if (position == 1300 ){
+			clearInterval(interval);
+		} else {
+			position++;
+			element.style.left = position + '.1px';
+		}
+	}
+}
+
+function carSixAnimate(){
+	var element = document.getElementById('car06');
+	var position = 1700;
+	var interval = setInterval(frame, 15)
+
+	function frame(){
+		if (position == -150 ){
+			clearInterval(interval);
+		} else {
+			position--;
+			element.style.left = position + '.1px';
+		}
+	}
+}
+
+function move(){
+	setInterval(carOneAnimate, 7000);
+	setInterval(carTwoAnimate, 8000);
+	setInterval(carThreeAnimate, 10000);
+	setInterval(carFourAnimate, 20000);
+	setInterval(carFiveAnimate, 10000);
+	setInterval(carSixAnimate, 30000);
+	carOneAnimate();
+	carTwoAnimate();
+	carThreeAnimate();
+	carFourAnimate();
+	carFiveAnimate();
+	carSixAnimate();
+}
+
+
+</script>
+
+</body>
+</html>
